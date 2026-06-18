@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Tracking & Prediction App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🌤️ Weather Tracking & Prediction</h1>
+            <p>Real-time weather data and historical analysis</p>
+        </header>
+
+        <div class="search-section">
+            <input 
+                type="text" 
+                id="cityInput" 
+                placeholder="Enter city name "
+                class="search-input"
+            >
+            <button id="searchBtn" class="search-btn">Search Weather</button>
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+
+        <div id="currentWeatherSection" class="weather-section hidden">
+            <div class="weather-card">
+                <h2 id="weatherCity" class="city-name">City Name</h2>
+                <div class="weather-details">
+                    <div class="detail">
+                        <span class="label">Temperature:</span>
+                        <span id="temperature" class="value">--°C</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Condition:</span>
+                        <span id="description" class="value">--</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Humidity:</span>
+                        <span id="humidity" class="value">--%</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Wind Speed:</span>
+                        <span id="windSpeed" class="value">-- m/s</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Pressure:</span>
+                        <span id="pressure" class="value">-- hPa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="historicalCardsSection" class="historical-cards hidden">
+            <div class="info-card highest">
+                <h3>🔥 Highest Temperature Ever</h3>
+                <p id="highestTemp" class="temperature-value">--°C</p>
+                <p id="highestCity" class="city-info">--</p>
+            </div>
+            <div class="info-card lowest">
+                <h3>❄️ Lowest Temperature Ever</h3>
+                <p id="lowestTemp" class="temperature-value">--°C</p>
+                <p id="lowestCity" class="city-info">--</p>
+            </div>
+        </div>
+
+        <div id="predictionSection" class="prediction-section hidden">
+            <h2>📊 7-Day Weather Prediction</h2>
+            <div class="prediction-card">
+                <p><strong>Predicted Temperature:</strong> <span id="predictedTemp">--°C</span></p>
+                <p><strong>Predicted Wind Speed:</strong> <span id="predictedWind">-- m/s</span></p>
+                <p><strong>Method:</strong> <span id="predictionMethod">Moving Average</span></p>
+            </div>
+        </div>
+
+        <div class="buttons-section">
+            <button id="hottestBtn" class="action-btn hottest">🔥 Top 5 Hottest Cities</button>
+            <button id="coldestBtn" class="action-btn coldest">❄️ Top 5 Coldest Cities</button>
+        </div>
+
+        <div id="topCitiesSection" class="top-cities-section hidden">
+            <h2 id="topCitiesTitle">Top 5 Cities</h2>
+            <div id="topCitiesList" class="cities-list">
+                </div>
+        </div>
+
+        <footer class="footer">
+            <p>Data powered by OpenWeatherMap API | Historical data from Weather Station Records</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
